@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Zet de projectmap vast als root (er staat nog een lockfile in de home-map).
+  turbopack: {
+    root: __dirname,
+  },
 };
 
 export default nextConfig;

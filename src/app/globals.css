@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* === Merk: navy-blauw (uit de kaart) === */
+  --color-brand-50: #eff5fb;
+  --color-brand-100: #d8e7f4;
+  --color-brand-200: #b2cfe9;
+  --color-brand-300: #82b0da;
+  --color-brand-400: #4d8cc7;
+  --color-brand-500: #2a6cb0;
+  --color-brand-600: #1f5491;
+  --color-brand-700: #1a4878; /* primaire navy */
+  --color-brand-800: #143a63;
+  --color-brand-900: #112f50;
+
+  /* === Accent: fris groen (uit het logo) === */
+  --color-accent-50: #f3f9ea;
+  --color-accent-100: #e2f1cd;
+  --color-accent-200: #c8e6a0;
+  --color-accent-300: #aad96f;
+  --color-accent-400: #8dc93f; /* primair groen */
+  --color-accent-500: #73b02b;
+  --color-accent-600: #588a20;
+  --color-accent-700: #44691b;
+
+  /* Achtergrond / tekst */
+  --color-background: #ffffff;
+  --color-foreground: #112f50;
+  --color-muted: #f5f8fc;
+
+  /* Lettertypen */
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-heading: var(--font-heading), system-ui, sans-serif;
+
+  /* Afronding & schaduw */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--color-brand-100);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Vloeiend scrollen voor anker-links */
+html {
+  scroll-behavior: smooth;
 }
