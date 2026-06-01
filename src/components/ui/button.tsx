@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "accent" | "outline" | "ghost";
+type Variant = "primary" | "accent" | "outline" | "ghost" | "white";
 type Size = "md" | "lg";
 
 const base =
@@ -12,6 +12,7 @@ const variants: Record<Variant, string> = {
   accent: "bg-accent-400 text-brand-900 hover:bg-accent-500 hover:text-white",
   outline: "border-2 border-brand-700 text-brand-700 hover:bg-brand-50",
   ghost: "text-brand-700 hover:bg-brand-50",
+  white: "bg-white text-brand-700 hover:bg-brand-50",
 };
 
 const sizes: Record<Size, string> = {

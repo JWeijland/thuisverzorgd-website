@@ -453,11 +453,7 @@ function FinalCta() {
             <Button href="/word-buddy#aanmelden" variant="accent" size="lg">
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
-            <Button
-              href="/hulp-aanvragen"
-              size="lg"
-              className="bg-white text-brand-700 hover:bg-brand-50"
-            >
+            <Button href="/hulp-aanvragen" variant="white" size="lg">
               Hulp aanvragen
             </Button>
           </div>
