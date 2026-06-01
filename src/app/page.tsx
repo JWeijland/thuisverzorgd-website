@@ -75,10 +75,9 @@ function Hero() {
           </div>
         </div>
 
-        {/* App-kaartjes: kant van de buddy én van de hulpvrager */}
-        <div className="relative mx-auto flex w-full max-w-sm flex-col gap-5">
+        {/* App-kaartje als visual */}
+        <div className="relative mx-auto w-full max-w-sm">
           <TaskCard />
-          <RequestCard />
         </div>
       </Container>
     </section>
@@ -114,48 +113,12 @@ function TaskCard() {
         </div>
         <div className="rounded-2xl bg-accent-50 p-3">
           <dt className="text-xs text-accent-700">Verdienste</dt>
-          <dd className="mt-1 font-heading font-bold text-accent-700">€18</dd>
+          <dd className="mt-1 font-heading font-bold text-accent-700">€24</dd>
         </div>
       </dl>
 
       <button className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-accent-400 font-heading font-semibold text-brand-900 transition-colors hover:bg-accent-500 hover:text-white">
         <IconCheck className="h-5 w-5" /> Taak aannemen
-      </button>
-    </div>
-  );
-}
-
-/** Visuele weergave van een hulpvraag (kant van de cliënt). */
-function RequestCard() {
-  return (
-    <div className="rounded-3xl bg-white p-6 shadow-2xl shadow-brand-900/40">
-      <div className="flex items-center justify-between">
-        <span className="rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">
-          Hulp aanvragen
-        </span>
-        <span className="text-xs text-brand-400">in 2 min</span>
-      </div>
-
-      <h3 className="mt-4 font-heading text-xl font-bold text-brand-900">
-        Waarmee kunnen we helpen?
-      </h3>
-      <p className="mt-1 text-sm text-brand-500">
-        Kies wat u nodig heeft — een buddy uit de buurt pakt het op.
-      </p>
-
-      <div className="mt-5 flex flex-wrap gap-2">
-        {["Gezelschap", "Boodschappen", "Samen wandelen"].map((t) => (
-          <span
-            key={t}
-            className="rounded-full bg-brand-50 px-3 py-1.5 text-sm font-medium text-brand-700"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-
-      <button className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-700 font-heading font-semibold text-white transition-colors hover:bg-brand-800">
-        <IconHeart className="h-5 w-5" /> Vraag hulp aan
       </button>
     </div>
   );
