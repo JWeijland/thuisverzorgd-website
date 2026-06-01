@@ -42,16 +42,16 @@ function Hero() {
             <IconHeart className="h-4 w-4" /> Zorg uit de buurt, voor de buurt
           </span>
           <h1 className="mt-6 font-heading text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-            Word buddy en help{" "}
-            <span className="text-accent-400">ouderen in jouw buurt</span>
+            Zorg dichtbij,{" "}
+            <span className="text-accent-400">voor elkaar geregeld</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-brand-200">
-            Verdien geld met flexibel werk, bouw waardevolle zorgervaring op en
-            maak het verschil voor iemand dichtbij. Jij bepaalt wanneer, waar en
-            voor wie — wij regelen de rest.
+            Zoek je hulp voor jezelf of een naaste? Een vertrouwde buddy uit de
+            buurt staat snel voor je klaar. Wil je juist helpen? Word buddy,
+            verdien bij en bouw zorgervaring op. Jij bepaalt — wij regelen de rest.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button href="/word-buddy" variant="accent" size="lg">
+            <Button href="/word-buddy#aanmelden" variant="accent" size="lg">
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
             <Button
@@ -75,9 +75,10 @@ function Hero() {
           </div>
         </div>
 
-        {/* App-kaartje als visual */}
-        <div className="relative mx-auto w-full max-w-sm">
+        {/* App-kaartjes: kant van de buddy én van de hulpvrager */}
+        <div className="relative mx-auto flex w-full max-w-sm flex-col gap-5">
           <TaskCard />
+          <RequestCard />
         </div>
       </Container>
     </section>
@@ -119,6 +120,42 @@ function TaskCard() {
 
       <button className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-accent-400 font-heading font-semibold text-brand-900 transition-colors hover:bg-accent-500 hover:text-white">
         <IconCheck className="h-5 w-5" /> Taak aannemen
+      </button>
+    </div>
+  );
+}
+
+/** Visuele weergave van een hulpvraag (kant van de cliënt). */
+function RequestCard() {
+  return (
+    <div className="rounded-3xl bg-white p-6 shadow-2xl shadow-brand-900/40">
+      <div className="flex items-center justify-between">
+        <span className="rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">
+          Hulp aanvragen
+        </span>
+        <span className="text-xs text-brand-400">in 2 min</span>
+      </div>
+
+      <h3 className="mt-4 font-heading text-xl font-bold text-brand-900">
+        Waarmee kunnen we helpen?
+      </h3>
+      <p className="mt-1 text-sm text-brand-500">
+        Kies wat u nodig heeft — een buddy uit de buurt pakt het op.
+      </p>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {["Gezelschap", "Boodschappen", "Samen wandelen"].map((t) => (
+          <span
+            key={t}
+            className="rounded-full bg-brand-50 px-3 py-1.5 text-sm font-medium text-brand-700"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <button className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-brand-700 font-heading font-semibold text-white transition-colors hover:bg-brand-800">
+        <IconHeart className="h-5 w-5" /> Vraag hulp aan
       </button>
     </div>
   );
@@ -242,7 +279,7 @@ function ForBuddies() {
             toekomst in de zorg.
           </p>
           <div className="mt-8">
-            <Button href="/word-buddy" variant="primary" size="lg">
+            <Button href="/word-buddy#aanmelden" variant="primary" size="lg">
               Aanmelden als buddy <IconArrowRight className="h-5 w-5" />
             </Button>
           </div>
@@ -288,11 +325,11 @@ function Quality() {
             Kwaliteit & vertrouwen
           </span>
           <h2 className="mt-3 font-heading text-3xl font-bold sm:text-4xl">
-            Elke buddy weet precies wat hij mag
+            Buddies weten precies wat ze mogen
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-brand-200">
-            Onze niveaus zijn afgeleid van de Wet BIG. Een buddy krijgt alleen
-            taken die passen bij zijn niveau en certificering. Zo weet jij als
+            Onze niveaus zijn afgeleid van de Wet BIG. Buddies krijgen alleen
+            taken die passen bij hun niveau en certificering. Zo weet jij als
             cliënt of familielid zeker dat je in veilige handen bent.
           </p>
           <ul className="mt-8 space-y-3">
@@ -394,7 +431,7 @@ function Faq() {
   const faqs = [
     {
       q: "Heb ik een zorgdiploma nodig om buddy te worden?",
-      a: "Nee. Je start als Basis Buddy met taken zoals gezelschap en boodschappen. Via onze in-app cursussen groei je door naar hogere niveaus. Heb je al een zorgdiploma? Dan stroom je versneld door.",
+      a: "Nee. Na je aanmelding doe je een korte, betaalde inwerkcursus waarin we samen de basisregels en standaarden doornemen — zorg met een hart begint immers bij een goede start. Daarna ga je aan de slag als Basis Buddy met taken zoals gezelschap en boodschappen, en groei je via in-app cursussen door naar hogere niveaus. Heb je al een zorgdiploma? Dan stroom je versneld door.",
     },
     {
       q: "Hoeveel kan ik verdienen?",
@@ -450,7 +487,7 @@ function FinalCta() {
             hulp aan voor jezelf of een naaste.
           </p>
           <div className="relative mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href="/word-buddy" variant="accent" size="lg">
+            <Button href="/word-buddy#aanmelden" variant="accent" size="lg">
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
             <Button

@@ -107,8 +107,8 @@ export default function WordBuddyPage() {
                 d: "Een korte identiteitscheck zorgt dat cliënten je kunnen vertrouwen.",
               },
               {
-                t: "Volg de Basis-Buddy cursus",
-                d: "Leer de basis van veilige, prettige zorg. Daarna kun je direct starten.",
+                t: "Doe de korte, betaalde inwerkcursus",
+                d: "In ongeveer een uur nemen we samen de basisregels en standaarden door — zorg met een hart begint bij een goede start. En ja: voor deze inwerktijd word je gewoon betaald.",
               },
               {
                 t: "Neem je eerste taak aan",
