@@ -84,7 +84,7 @@ export default function OverOnsPage() {
             <Button href="/word-buddy" variant="accent" size="lg">
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
-            <Button href="/hulp-aanvragen" variant="outline" size="lg">
+            <Button href="/hulp-aanvragen#aanvraag" variant="outline" size="lg">
               Hulp aanvragen
             </Button>
           </div>

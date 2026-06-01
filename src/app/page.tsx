@@ -55,7 +55,7 @@ function Hero() {
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
             <Button
-              href="/hulp-aanvragen"
+              href="/hulp-aanvragen#aanvraag"
               size="lg"
               className="bg-white/10 text-white hover:bg-white/20"
             >
@@ -453,7 +453,7 @@ function FinalCta() {
             <Button href="/word-buddy#aanmelden" variant="accent" size="lg">
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
-            <Button href="/hulp-aanvragen" variant="white" size="lg">
+            <Button href="/hulp-aanvragen#aanvraag" variant="white" size="lg">
               Hulp aanvragen
             </Button>
           </div>
