@@ -7,7 +7,7 @@ import { IconCheck, IconArrowRight } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Voor zorgorganisaties",
   description:
-    "Werk samen met Thuisverzorgd. Zet flexibele, gecertificeerde buddies in voor lichte zorg en ontzorg uw organisatie met heldere facturatie.",
+    "Werk samen met Thuisverzorgd. Zet flexibele, gecertificeerde buddies in voor lichte zorg en schaal eenvoudig op wanneer dat nodig is.",
 };
 
 export default function ZorgorganisatiesPage() {
@@ -16,7 +16,7 @@ export default function ZorgorganisatiesPage() {
       <PageHero
         eyebrow="Voor zorgorganisaties"
         title="Flexibele capaciteit, zonder gedoe"
-        subtitle="Zet via Thuisverzorgd gecertificeerde buddies in voor lichte zorg. Wij regelen matching, registratie en facturatie — u houdt de regie."
+        subtitle="Zet via Thuisverzorgd gecertificeerde buddies in voor lichte zorg. Wij regelen matching en registratie — u houdt de regie."
       >
         <Button href="/contact" variant="accent" size="lg">
           Plan een kennismaking <IconArrowRight className="h-5 w-5" />
@@ -40,8 +40,8 @@ export default function ZorgorganisatiesPage() {
                 d: "Buddies worden geverifieerd en ingedeeld op niveau, afgeleid van de Wet BIG.",
               },
               {
-                t: "Heldere facturatie",
-                d: "Maandelijkse rapportage en export per cliënt, taak en financieringsvorm.",
+                t: "Eén aanspreekpunt",
+                d: "Korte lijnen en duidelijke afspraken — u heeft altijd één vast contactpunt.",
               },
               {
                 t: "WMO, PGB & WLZ",
