@@ -28,6 +28,29 @@ const taken = [
   "Begeleiding naar een afspraak",
 ];
 
+const faqs = [
+  {
+    q: "Hoe snel staat er een buddy voor de deur?",
+    a: "Vaak binnen tien minuten. Zodra u een aanvraag doet, krijgen beschikbare buddies in de buurt direct een melding. U ziet meteen wie de taak oppakt en wanneer diegene er is.",
+  },
+  {
+    q: "Wat kost het om hulp aan te vragen?",
+    a: "U betaalt per uitgevoerde taak. Voordat u bevestigt ziet u altijd wat de hulp kost, zodat u nooit voor verrassingen komt te staan.",
+  },
+  {
+    q: "Zijn de buddies wel betrouwbaar?",
+    a: "Ja. Elke buddy heeft een geverifieerde identiteit en een niveau dat past bij de taak. Na elke taak volgt een beoordeling, zodat de kwaliteit hoog blijft.",
+  },
+  {
+    q: "Kan een familielid de aanvraag doen en meekijken?",
+    a: "Zeker. Een familielid kan via een koppelcode namens u een aanvraag doen, de activiteiten volgen en achteraf een beoordeling geven.",
+  },
+  {
+    q: "Welke hulp kan ik aanvragen?",
+    a: "Lichte zorg en ondersteuning, zoals gezelschap, boodschappen, samen wandelen, hulp bij opstaan of een maaltijd bereiden. Voor zwaardere medische zorg verwijzen we u door naar de juiste partij.",
+  },
+];
+
 export default function HulpAanvragenPage() {
   return (
     <>
@@ -170,6 +193,29 @@ export default function HulpAanvragenPage() {
                 Aanvraag versturen
               </Button>
             </form>
+          </div>
+        </Container>
+      </section>
+
+      {/* Veelgestelde vragen voor hulpzoekers */}
+      <section id="faq" className="bg-muted py-20 lg:py-24">
+        <Container className="max-w-3xl">
+          <SectionHeader eyebrow="Veelgestelde vragen" title="Goed om te weten" />
+          <div className="mt-12 space-y-4">
+            {faqs.map((f) => (
+              <details
+                key={f.q}
+                className="group rounded-2xl border border-brand-100 bg-white p-6 shadow-sm"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between font-heading font-semibold text-brand-900">
+                  {f.q}
+                  <span className="ml-4 text-accent-500 transition-transform group-open:rotate-45">
+                    <IconArrowRight className="h-5 w-5 rotate-90" />
+                  </span>
+                </summary>
+                <p className="mt-3 leading-relaxed text-brand-600">{f.a}</p>
+              </details>
+            ))}
           </div>
         </Container>
       </section>

@@ -33,7 +33,7 @@ export default function VoorwaardenPage() {
         {
           heading: "4. Betaling",
           body: [
-            "Voor uitgevoerde taken geldt een vooraf inzichtelijke vergoeding. De afhandeling van betalingen verloopt via het platform.",
+            "Voor uitgevoerde taken geldt een vooraf inzichtelijke vergoeding. De afhandeling van betalingen verloopt via het platform, of via de aangesloten thuiszorgorganisatie.",
           ],
         },
         {
