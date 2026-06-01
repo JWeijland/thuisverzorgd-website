@@ -17,7 +17,7 @@ const columns = [
     links: [
       { label: "Over Thuisverzorgd", href: "/over-ons" },
       { label: "Voor zorgorganisaties", href: "/zorgorganisaties" },
-      { label: "Veelgestelde vragen", href: "/#faq" },
+      { label: "Veelgestelde vragen", href: "/veelgestelde-vragen" },
       { label: "Contact", href: "/contact" },
     ],
   },

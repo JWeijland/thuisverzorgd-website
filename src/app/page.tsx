@@ -1,5 +1,8 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { FaqList } from "@/components/faq-list";
+import { buddyFaqs } from "@/lib/faqs";
 import {
   IconEuro,
   IconClock,
@@ -391,44 +394,26 @@ function Testimonials() {
 /* ---------------------------------- FAQ ----------------------------------- */
 
 function Faq() {
-  const faqs = [
-    {
-      q: "Heb ik een zorgdiploma nodig om buddy te worden?",
-      a: "Nee. Na je aanmelding doe je een korte, betaalde inwerkcursus waarin we samen de basisregels en standaarden doornemen — zorg met een hart begint immers bij een goede start. Daarna ga je aan de slag als Basis Buddy met taken zoals gezelschap en boodschappen, en groei je via in-app cursussen door naar hogere niveaus. Heb je al een zorgdiploma? Dan stroom je versneld door.",
-    },
-    {
-      q: "Hoeveel kan ik verdienen?",
-      a: "Je verdient per uitgevoerde taak. Bij elke melding zie je vooraf precies wat de taak oplevert, zodat je nooit voor verrassingen komt te staan.",
-    },
-    {
-      q: "Hoe bepaal ik wanneer ik werk?",
-      a: "Volledig zelf. Je stelt je beschikbaarheid en maximale reisafstand in. Je krijgt alleen meldingen die daarbinnen passen.",
-    },
-    {
-      q: "Hoe wordt de kwaliteit gewaarborgd?",
-      a: "Elke buddy heeft een geverifieerde identiteit en een niveau dat is gekoppeld aan opleiding en certificering. Na elke taak volgt een beoordeling.",
-    },
-  ];
   return (
     <section id="faq" className="py-20 lg:py-28">
       <Container className="max-w-3xl">
-        <SectionHeader eyebrow="Veelgestelde vragen" title="Goed om te weten" />
-        <div className="mt-12 space-y-4">
-          {faqs.map((f) => (
-            <details
-              key={f.q}
-              className="group rounded-2xl border border-brand-100 bg-white p-6 shadow-sm"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between font-heading font-semibold text-brand-900">
-                {f.q}
-                <span className="ml-4 text-accent-500 transition-transform group-open:rotate-45">
-                  <IconArrowRight className="h-5 w-5 rotate-90" />
-                </span>
-              </summary>
-              <p className="mt-3 leading-relaxed text-brand-600">{f.a}</p>
-            </details>
-          ))}
+        <SectionHeader
+          eyebrow="Veelgestelde vragen"
+          title="Goed om te weten voor buddies"
+        />
+        <div className="mt-12">
+          <FaqList items={buddyFaqs} />
         </div>
+        <p className="mt-8 text-center text-brand-600">
+          Op zoek naar hulp?{" "}
+          <Link
+            href="/veelgestelde-vragen"
+            className="font-semibold text-brand-700 underline hover:text-accent-600"
+          >
+            Bekijk alle veelgestelde vragen
+          </Link>
+          .
+        </p>
       </Container>
     </section>
   );
