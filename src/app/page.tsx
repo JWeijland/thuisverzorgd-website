@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -21,6 +22,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <HowItWorks />
+      <Vergoeding />
       <ForBuddies />
       <Quality />
       <Testimonials />
@@ -78,9 +80,21 @@ function Hero() {
           </div>
         </div>
 
-        {/* App-kaartje als visual */}
-        <div className="relative mx-auto w-full max-w-sm">
-          <TaskCard />
+        {/* Visual: sfeerfoto met zwevend taak-kaartje */}
+        <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-brand-900/50">
+            <Image
+              src="/images/buddy-senior.jpg"
+              alt="Buddy in gesprek met een oudere uit de buurt"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="mt-5 sm:mt-0 sm:absolute sm:-bottom-5 sm:-left-5 sm:w-64">
+            <TaskCard />
+          </div>
         </div>
       </Container>
     </section>
@@ -198,6 +212,60 @@ function HowItWorks() {
               <p className="mt-2 leading-relaxed text-brand-600">{step.text}</p>
             </div>
           ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* ------------------------------ Vergoeding -------------------------------- */
+
+function Vergoeding() {
+  return (
+    <section className="py-20 lg:py-24">
+      <Container className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="order-2 lg:order-1">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl shadow-brand-900/10">
+            <Image
+              src="/images/senior-blij.jpg"
+              alt="Lachende oudere vrouw thuis"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="order-1 lg:order-2">
+          <span className="font-heading text-sm font-semibold uppercase tracking-wider text-accent-600">
+            Vergoeding
+          </span>
+          <h2 className="mt-3 font-heading text-3xl font-bold text-brand-900 sm:text-4xl">
+            Vaak vergoed via de Wmo
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-brand-600">
+            Veel gemeenten vergoeden hulp aan huis (deels) via de Wet
+            maatschappelijke ondersteuning (Wmo). Onze app helpt je stap voor
+            stap bij de aanvraag, zodat je snel weet waar je recht op hebt — zonder
+            ingewikkeld papierwerk.
+          </p>
+          <ul className="mt-8 space-y-3">
+            {[
+              "Vaak (deels) vergoed via de Wmo",
+              "De app begeleidt je door de aanvraag, stap voor stap",
+              "Ook mogelijk via Wlz, pgb of particulier",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3 text-brand-700">
+                <IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-accent-500" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8">
+            <Button href="/hulp-aanvragen#aanvraag" variant="primary" size="lg">
+              Hulp aanvragen <IconArrowRight className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
       </Container>
     </section>

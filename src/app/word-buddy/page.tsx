@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeader } from "@/components/ui/section";
@@ -38,6 +39,27 @@ export default function WordBuddyPage() {
           </Button>
         </div>
       </PageHero>
+
+      {/* Sfeerbeeld */}
+      <section className="py-12 lg:py-16">
+        <Container>
+          <div className="relative aspect-[16/9] overflow-hidden rounded-3xl shadow-xl shadow-brand-900/10 sm:aspect-[21/9]">
+            <Image
+              src="/images/buddy-fiets.jpg"
+              alt="Buddy onderweg op de fiets door de buurt"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-brand-900/10 to-transparent" />
+            <div className="absolute bottom-0 left-0 max-w-md p-6 sm:p-10">
+              <p className="font-heading text-xl font-bold text-white sm:text-3xl">
+                Altijd dichtbij — jij pakt taken op bij jou in de buurt.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
 
       {/* Voordelen */}
       <section className="py-20 lg:py-24">

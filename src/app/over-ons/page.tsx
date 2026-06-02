@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeader } from "@/components/ui/section";
@@ -71,6 +72,24 @@ export default function OverOnsPage() {
               </div>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="pb-8 lg:pb-12">
+        <Container className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl shadow-brand-900/10">
+            <Image
+              src="/images/senior-portret.jpg"
+              alt="Lachende oudere vrouw"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <blockquote className="font-heading text-2xl font-bold leading-snug text-brand-900 sm:text-3xl">
+            “Iedereen verdient zorg met aandacht — dichtbij, vertrouwd en met een
+            glimlach.”
+          </blockquote>
         </Container>
       </section>
 

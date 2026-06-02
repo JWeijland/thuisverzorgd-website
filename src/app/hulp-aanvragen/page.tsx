@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeader } from "@/components/ui/section";
@@ -36,7 +37,7 @@ export default function HulpAanvragenPage() {
       <PageHero
         eyebrow="Voor cliënten & familie"
         title="Snel een vertrouwde buddy uit de buurt"
-        subtitle="Of het nu gaat om gezelschap, boodschappen of hulp in huis — een geverifieerde buddy staat vaak binnen tien minuten voor u klaar."
+        subtitle="Of het nu gaat om gezelschap, boodschappen of hulp in huis — een geverifieerde buddy staat vaak binnen tien minuten voor u klaar. Vaak (deels) vergoed via de Wmo, en de app helpt u bij de aanvraag."
       >
         <Button href="#aanvraag" variant="accent" size="lg">
           Hulp aanvragen <IconArrowRight className="h-5 w-5" />
@@ -106,6 +107,53 @@ export default function HulpAanvragenPage() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      {/* Vergoeding / Wmo */}
+      <section className="py-20 lg:py-24">
+        <Container className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span className="font-heading text-sm font-semibold uppercase tracking-wider text-accent-600">
+              Vergoeding
+            </span>
+            <h2 className="mt-3 font-heading text-3xl font-bold text-brand-900 sm:text-4xl">
+              Vaak vergoed via de Wmo
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-brand-600">
+              In veel gevallen wordt hulp aan huis (deels) vergoed via de Wet
+              maatschappelijke ondersteuning (Wmo) van uw gemeente. U hoeft het
+              niet zelf uit te zoeken: onze app begeleidt u stap voor stap door de
+              aanvraag, zodat u snel weet waar u recht op heeft.
+            </p>
+            <ul className="mt-8 space-y-3">
+              {[
+                "Vaak (deels) vergoed via de Wmo",
+                "De app helpt u bij de aanvraag, stap voor stap",
+                "Ook mogelijk via Wlz, pgb of particulier",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-brand-700">
+                  <IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-accent-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8">
+              <Button href="#aanvraag" variant="primary" size="lg">
+                Hulp aanvragen <IconArrowRight className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl shadow-brand-900/10">
+            <Image
+              src="/images/senior-koffie.jpg"
+              alt="Lachende oudere vrouw met een kopje koffie"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </Container>
       </section>
 
