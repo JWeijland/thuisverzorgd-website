@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Container } from "@/components/ui/container";
+import { StoreBadges } from "@/components/store-badges";
 
 const columns = [
   {
@@ -41,6 +42,7 @@ export function Footer() {
             Het platform dat ouderen en buddies in de buurt verbindt. Flexibele,
             betaalde zorg met gegarandeerde kwaliteit.
           </p>
+          <StoreBadges />
         </div>
 
         {columns.map((col) => (

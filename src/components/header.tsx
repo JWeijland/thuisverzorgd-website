@@ -37,7 +37,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Button href="/hulp-aanvragen#aanvraag" variant="outline" size="md">
+          <Button href="/hulp-aanvragen" variant="outline" size="md">
             Hulp aanvragen
           </Button>
           <Button href="/word-buddy" variant="accent" size="md">
@@ -72,7 +72,7 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-3 flex flex-col gap-3">
-              <Button href="/hulp-aanvragen#aanvraag" variant="outline" size="md">
+              <Button href="/hulp-aanvragen" variant="outline" size="md">
                 Hulp aanvragen
               </Button>
               <Button href="/word-buddy" variant="accent" size="md">

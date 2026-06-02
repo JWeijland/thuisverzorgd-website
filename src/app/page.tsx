@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { FaqList } from "@/components/faq-list";
 import { Coverage } from "@/components/coverage";
+import { StoreBadges } from "@/components/store-badges";
 import { buddyFaqs } from "@/lib/faqs";
 import {
   IconEuro,
@@ -28,6 +29,7 @@ export default function Home() {
       <Quality />
       <Coverage />
       <Testimonials />
+      <AppDownload />
       <Faq />
       <FinalCta />
     </>
@@ -58,11 +60,11 @@ function Hero() {
             verdien bij en bouw zorgervaring op. Jij bepaalt — wij regelen de rest.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button href="/word-buddy#aanmelden" variant="accent" size="lg">
+            <Button href="/word-buddy" variant="accent" size="lg">
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
             <Button
-              href="/hulp-aanvragen#aanvraag"
+              href="/hulp-aanvragen"
               size="lg"
               className="bg-white/10 text-white hover:bg-white/20"
             >
@@ -194,7 +196,7 @@ function HowItWorks() {
         <SectionHeader
           eyebrow="Hoe het werkt"
           title="In drie stappen aan de slag"
-          subtitle="Geen ingewikkeld sollicitatietraject. Aanmelden, matchen, helpen — zo simpel is het."
+          subtitle="Aanmelden gaat snel — maar elke buddy wordt eerst geverifieerd en ingewerkt. Zo is het makkelijk én vertrouwd."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {steps.map((step, i) => (
@@ -264,7 +266,7 @@ function Vergoeding() {
             ))}
           </ul>
           <div className="mt-8">
-            <Button href="/hulp-aanvragen#aanvraag" variant="primary" size="lg">
+            <Button href="/hulp-aanvragen" variant="primary" size="lg">
               Hulp aanvragen <IconArrowRight className="h-5 w-5" />
             </Button>
           </div>
@@ -315,7 +317,7 @@ function ForBuddies() {
             toekomst in de zorg.
           </p>
           <div className="mt-8">
-            <Button href="/word-buddy#aanmelden" variant="primary" size="lg">
+            <Button href="/word-buddy" variant="primary" size="lg">
               Aanmelden als buddy <IconArrowRight className="h-5 w-5" />
             </Button>
           </div>
@@ -489,6 +491,43 @@ function Faq() {
   );
 }
 
+/* ------------------------------ App download ------------------------------ */
+
+function AppDownload() {
+  return (
+    <section id="download" className="py-16">
+      <Container>
+        <div className="relative overflow-hidden rounded-3xl bg-brand-900 px-8 py-12 sm:px-12 lg:flex lg:items-center lg:justify-between lg:gap-10">
+          <div className="pointer-events-none absolute -right-16 -bottom-20 h-64 w-64 rounded-full bg-accent-400/15 blur-3xl" />
+          <div className="relative flex items-center gap-5">
+            <div className="hidden h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-brand-700 ring-1 ring-white/15 sm:flex">
+              <svg viewBox="0 0 48 48" className="h-11 w-11" fill="none" aria-hidden="true">
+                <path d="M9 23 L24 10 L39 23" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12.5 22 V39 H35.5 V22" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="24" cy="27" r="3.2" fill="#ffffff" />
+                <path d="M18 39 C18 34 20.6 31.5 24 31.5 C27.4 31.5 30 34 30 39 Z" fill="#ffffff" />
+                <path d="M24 20.4 C23.1 18.6 20 19 20 21.4 C20 23 24 25.4 24 25.4 C24 25.4 28 23 28 21.4 C28 19 24.9 18.6 24 20.4 Z" fill="#8dc93f" />
+              </svg>
+            </div>
+            <div>
+              <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
+                Download de Thuisverzorgd-app
+              </h2>
+              <p className="mt-3 max-w-lg text-lg text-brand-200">
+                Hulp aanvragen of als buddy taken oppakken — alles vanuit één app.
+                Binnenkort beschikbaar voor iOS en Android.
+              </p>
+            </div>
+          </div>
+          <div className="relative mt-8 shrink-0 lg:mt-0">
+            <StoreBadges />
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 /* -------------------------------- Final CTA ------------------------------- */
 
 function FinalCta() {
@@ -505,10 +544,10 @@ function FinalCta() {
             hulp aan voor jezelf of een naaste.
           </p>
           <div className="relative mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href="/word-buddy#aanmelden" variant="accent" size="lg">
+            <Button href="/word-buddy" variant="accent" size="lg">
               Word buddy <IconArrowRight className="h-5 w-5" />
             </Button>
-            <Button href="/hulp-aanvragen#aanvraag" variant="white" size="lg">
+            <Button href="/hulp-aanvragen" variant="white" size="lg">
               Hulp aanvragen
             </Button>
           </div>
