@@ -32,7 +32,7 @@ export const clientFaqs: Faq[] = [
   },
   {
     q: "Zijn de buddies wel betrouwbaar?",
-    a: "Ja. Elke buddy heeft een geverifieerde identiteit en een niveau dat past bij de taak. Na elke taak volgt een beoordeling, zodat de kwaliteit hoog blijft.",
+    a: "Ja, veiligheid staat bij ons voorop. Elke buddy uploadt bij aanmelding een geldig identiteitsbewijs en levert een Verklaring Omtrent het Gedrag (VOG) aan voordat hij of zij aan de slag mag. Bij elk bezoek checkt de buddy in en uit met een selfie in de app, zodat u en uw familie precies zien wie er is geweest. Na elke taak volgt bovendien een beoordeling, zodat de kwaliteit hoog blijft.",
   },
   {
     q: "Kan een familielid de aanvraag doen en meekijken?",

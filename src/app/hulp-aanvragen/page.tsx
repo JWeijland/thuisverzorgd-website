@@ -12,6 +12,8 @@ import {
   IconCheck,
   IconArrowRight,
   IconUsers,
+  IconIdCard,
+  IconCamera,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -31,17 +33,44 @@ const taken = [
   "Begeleiding naar een afspraak",
 ];
 
+const screening = [
+  {
+    icon: IconIdCard,
+    t: "Identiteit geverifieerd",
+    d: "Bij aanmelding uploadt iedere buddy een geldig identiteitsbewijs. Zo weet u zeker dat de persoon voor uw deur ook écht is wie hij of zij zegt te zijn.",
+  },
+  {
+    icon: IconShield,
+    t: "VOG verplicht",
+    d: "Geen enkele buddy gaat aan de slag zonder geldige Verklaring Omtrent het Gedrag (VOG). De overheid toetst zo of iemands verleden zorgwerk in de weg staat.",
+  },
+  {
+    icon: IconCamera,
+    t: "In- en uitchecken met selfie",
+    d: "Bij aankomst en vertrek maakt de buddy een selfie in de app. U en uw familie zien precies wie er is geweest en hoe lang — volledige transparantie bij elk bezoek.",
+  },
+];
+
 export default function HulpAanvragenPage() {
   return (
     <>
       <PageHero
         eyebrow="Voor cliënten & familie"
         title="Snel een vertrouwde buddy uit de buurt"
-        subtitle="Of het nu gaat om gezelschap, boodschappen of hulp in huis — een geverifieerde buddy staat vaak binnen tien minuten voor u klaar. Vaak (deels) vergoed via de Wmo, en de app helpt u bij de aanvraag."
+        subtitle="Of het nu gaat om gezelschap, boodschappen of hulp in huis — een grondig gescreende buddy staat vaak binnen tien minuten voor u klaar. Elke buddy is gecontroleerd met ID en VOG, en checkt bij elk bezoek in en uit met een selfie. Vaak (deels) vergoed via de Wmo."
       >
-        <Button href="#aanvraag" variant="accent" size="lg">
-          Hulp aanvragen <IconArrowRight className="h-5 w-5" />
-        </Button>
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <Button href="#aanvraag" variant="accent" size="lg">
+            Hulp aanvragen <IconArrowRight className="h-5 w-5" />
+          </Button>
+          <Button
+            href="#veiligheid"
+            size="lg"
+            className="bg-white/10 text-white hover:bg-white/20"
+          >
+            <IconShield className="h-5 w-5" /> Zo screenen wij buddies
+          </Button>
+        </div>
       </PageHero>
 
       {/* Hoe het werkt */}
@@ -110,6 +139,45 @@ export default function HulpAanvragenPage() {
         </Container>
       </section>
 
+      {/* Veiligheid & screening */}
+      <section
+        id="veiligheid"
+        className="relative scroll-mt-24 overflow-hidden bg-brand-900 py-20 text-white lg:py-24"
+      >
+        <div className="pointer-events-none absolute -left-24 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-accent-400/15 blur-3xl" />
+        <Container className="relative">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="font-heading text-sm font-semibold uppercase tracking-wider text-accent-400">
+              Veiligheid voorop
+            </span>
+            <h2 className="mt-3 font-heading text-3xl font-bold sm:text-4xl">
+              Elke buddy is grondig gescreend
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-brand-200">
+              U laat iemand toe in uw huis, of dat van een naaste. Daarom screenen
+              we elke buddy streng vóór de eerste taak — en blijven we meekijken bij
+              elk bezoek.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {screening.map((s) => (
+              <div
+                key={s.t}
+                className="rounded-3xl border border-white/10 bg-white/5 p-8"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500/20 text-accent-300">
+                  <s.icon className="h-7 w-7" />
+                </div>
+                <h3 className="mt-5 font-heading text-xl font-bold text-white">
+                  {s.t}
+                </h3>
+                <p className="mt-2 leading-relaxed text-brand-200">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Vergoeding / Wmo */}
       <section className="py-20 lg:py-24">
         <Container className="grid items-center gap-12 lg:grid-cols-2">
@@ -168,15 +236,18 @@ export default function HulpAanvragenPage() {
               U bent in goede handen
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-brand-600">
-              Elke buddy heeft een geverifieerde identiteit en een niveau dat
-              past bij de taak. Familieleden kunnen meekijken en meebeslissen.
+              U laat iemand toe in uw huis, of dat van een naaste. Daarom screenen
+              we elke buddy streng vóór de eerste taak — met ID-controle en een
+              verplichte VOG — en checkt de buddy bij élk bezoek in en uit met een
+              selfie. Zo weet u altijd zeker wie er voor uw deur staat.
             </p>
             <ul className="mt-8 space-y-3">
               {[
-                "Geverifieerde, beoordeelde buddies",
-                "Niveaus afgeleid van de Wet BIG",
-                "Familie kan meekijken via een koppelcode",
-                "Noodknop voor directe hulp",
+                "Identiteit gecontroleerd via ID-verificatie",
+                "Verplichte VOG (Verklaring Omtrent het Gedrag)",
+                "In- en uitchecken met selfie bij elk bezoek",
+                "Familie kijkt live mee via een koppelcode",
+                "Noodknop in de app voor directe hulp",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-brand-700">
                   <IconShield className="mt-0.5 h-5 w-5 shrink-0 text-accent-500" />
@@ -186,7 +257,7 @@ export default function HulpAanvragenPage() {
             </ul>
           </div>
 
-          <div id="aanvraag" className="rounded-3xl bg-brand-900 p-8 text-white sm:p-10">
+          <div id="aanvraag" className="scroll-mt-24 rounded-3xl bg-brand-900 p-8 text-white sm:p-10">
             <h3 className="font-heading text-2xl font-bold">Vraag hulp aan</h3>
             <p className="mt-2 text-brand-200">
               Laat uw gegevens achter, dan nemen we snel contact op om de juiste
