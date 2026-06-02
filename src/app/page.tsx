@@ -96,7 +96,7 @@ function Hero() {
               className="object-cover"
             />
           </div>
-          <div className="mt-5 sm:mt-0 sm:absolute sm:-top-6 sm:-right-6 sm:w-56">
+          <div className="mt-5 sm:mt-0 sm:absolute sm:top-6 sm:right-6 sm:w-56">
             <TaskCard />
           </div>
         </div>
