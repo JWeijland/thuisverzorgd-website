@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { FaqList } from "@/components/faq-list";
+import { Coverage } from "@/components/coverage";
 import { buddyFaqs } from "@/lib/faqs";
 import {
   IconEuro,
@@ -25,6 +26,7 @@ export default function Home() {
       <Vergoeding />
       <ForBuddies />
       <Quality />
+      <Coverage />
       <Testimonials />
       <Faq />
       <FinalCta />

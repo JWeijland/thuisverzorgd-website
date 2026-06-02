@@ -61,3 +61,11 @@ h6 {
 html {
   scroll-behavior: smooth;
 }
+
+/* Leaflet: voorkom dat Tailwind-reset de kaarttegels vervormt */
+.leaflet-container img {
+  max-width: none !important;
+}
+.leaflet-container {
+  font-family: var(--font-sans);
+}
