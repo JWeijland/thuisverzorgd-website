@@ -257,7 +257,7 @@ function Vergoeding() {
             {[
               "Vaak (deels) vergoed via de Wmo",
               "De app begeleidt je door de aanvraag, stap voor stap",
-              "Ook mogelijk via Wlz, pgb of particulier",
+              "Ook mogelijk via pgb of particulier",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-brand-700">
                 <IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-accent-500" />
