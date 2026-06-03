@@ -26,7 +26,9 @@ type ButtonProps = {
   size?: Size;
   className?: string;
   children: React.ReactNode;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  /** Werkt voor zowel de <a> (Link) als de <button> variant. */
+  onClick?: React.MouseEventHandler<HTMLElement>;
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick">;
 
 export function Button({
   href,
@@ -34,20 +36,21 @@ export function Button({
   size = "md",
   className,
   children,
+  onClick,
   ...props
 }: ButtonProps) {
   const classes = cn(base, variants[variant], sizes[size], className);
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={onClick}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} onClick={onClick} {...props}>
       {children}
     </button>
   );

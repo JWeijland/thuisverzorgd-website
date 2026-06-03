@@ -41,9 +41,8 @@ export function PhoneMockup({
 }
 
 /**
- * Showcase van meerdere telefoons in een licht gefande rij.
+ * Showcase van meerdere telefoons in een nette, op één lijn uitgelijnde rij.
  * Schuift horizontaal op smalle schermen en centreert wanneer alles past.
- * De middelste telefoon staat iets hoger voor een natuurlijke "fan".
  */
 export function PhoneShowcase({
   phones,
@@ -52,35 +51,28 @@ export function PhoneShowcase({
   phones: Phone[];
   className?: string;
 }) {
-  const mid = (phones.length - 1) / 2;
-
   return (
     <div
       className={cn(
-        "flex snap-x snap-mandatory items-end gap-6 overflow-x-auto pb-4 sm:justify-center sm:gap-5 lg:gap-8",
+        "flex snap-x snap-mandatory items-start gap-6 overflow-x-auto pb-4 sm:justify-center sm:gap-5 lg:gap-8",
         // Schaduwruimte zodat de drop-shadow niet wordt afgekapt
         "-mx-5 px-5 sm:mx-0 sm:px-0",
         className,
       )}
     >
-      {phones.map((phone, i) => {
-        // Telefoons dichter bij het midden staan iets hoger.
-        const lift = Math.round((mid - Math.abs(i - mid)) * 14);
-        return (
-          <figure
-            key={phone.src}
-            className="w-40 shrink-0 snap-center sm:w-36 lg:w-44"
-            style={{ transform: `translateY(-${lift}px)` }}
-          >
-            <PhoneMockup src={phone.src} alt={phone.alt} priority={i === 0} />
-            {phone.caption && (
-              <figcaption className="mt-3 text-center text-sm font-medium text-brand-500">
-                {phone.caption}
-              </figcaption>
-            )}
-          </figure>
-        );
-      })}
+      {phones.map((phone, i) => (
+        <figure
+          key={phone.src}
+          className="w-40 shrink-0 snap-center sm:w-36 lg:w-44"
+        >
+          <PhoneMockup src={phone.src} alt={phone.alt} priority={i === 0} />
+          {phone.caption && (
+            <figcaption className="mt-3 text-center text-sm font-medium text-brand-500">
+              {phone.caption}
+            </figcaption>
+          )}
+        </figure>
+      ))}
     </div>
   );
 }
