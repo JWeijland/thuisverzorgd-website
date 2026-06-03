@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeader } from "@/components/ui/section";
+import { PhoneShowcase } from "@/components/phone-mockup";
 import { FaqList } from "@/components/faq-list";
 import { clientFaqs } from "@/lib/faqs";
 import {
@@ -115,8 +116,44 @@ export default function HulpAanvragenPage() {
         </Container>
       </section>
 
-      {/* Taken */}
+      {/* App-impressie voor cliënten & familie */}
       <section className="bg-muted py-20 lg:py-24">
+        <Container>
+          <SectionHeader
+            eyebrow="In de app"
+            title="Hulp vragen, rustig en duidelijk"
+            subtitle="Spreek in of kies een soort hulp, controleer de aanvraag en zie precies wat het kost — in een paar grote, heldere stappen."
+          />
+          <PhoneShowcase
+            className="mt-14"
+            phones={[
+              {
+                src: "/images/app/app-welkom.png",
+                alt: "Welkomstscherm: kies of u hulp zoekt, buddy of familielid bent",
+                caption: "Welkom",
+              },
+              {
+                src: "/images/app/app-hulp-soort.png",
+                alt: "Vertel waar u hulp bij nodig heeft — inspreken of kiezen",
+                caption: "Vertel wat u nodig heeft",
+              },
+              {
+                src: "/images/app/app-hulp-bevestigen.png",
+                alt: "Controleer de aanvraag met soort hulp, tijd en geschat tarief",
+                caption: "Controleer & bevestig",
+              },
+              {
+                src: "/images/app/app-home.png",
+                alt: "Startscherm met directe hulp en eerdere bezoeken",
+                caption: "Alles overzichtelijk",
+              },
+            ]}
+          />
+        </Container>
+      </section>
+
+      {/* Taken */}
+      <section className="py-20 lg:py-24">
         <Container>
           <SectionHeader
             eyebrow="Waarmee kunnen we helpen?"

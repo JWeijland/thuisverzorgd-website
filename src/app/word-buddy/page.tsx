@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionHeader } from "@/components/ui/section";
+import { PhoneShowcase } from "@/components/phone-mockup";
 import {
   IconEuro,
   IconClock,
@@ -110,8 +111,44 @@ export default function WordBuddyPage() {
         </Container>
       </section>
 
-      {/* Stappenplan */}
+      {/* App-impressie voor buddies */}
       <section className="bg-muted py-20 lg:py-24">
+        <Container>
+          <SectionHeader
+            eyebrow="In de app"
+            title="Alles wat je nodig hebt, in je broekzak"
+            subtitle="Vind taken op de kaart, neem ze met één tik aan, navigeer naar de cliënt en groei door met cursussen."
+          />
+          <PhoneShowcase
+            className="mt-14"
+            phones={[
+              {
+                src: "/images/app/app-kaart.png",
+                alt: "Kaart met beschikbare taken bij jou in de buurt",
+                caption: "Taken in de buurt",
+              },
+              {
+                src: "/images/app/app-taak.png",
+                alt: "Taakdetail met afstand, niveau en verdienste",
+                caption: "Taak aannemen",
+              },
+              {
+                src: "/images/app/app-onderweg.png",
+                alt: "Navigatie naar de cliënt met aankomsttijd",
+                caption: "Onderweg",
+              },
+              {
+                src: "/images/app/app-cursussen.png",
+                alt: "Cursussen om door te groeien naar een hoger niveau",
+                caption: "Groei in niveau",
+              },
+            ]}
+          />
+        </Container>
+      </section>
+
+      {/* Stappenplan */}
+      <section className="py-20 lg:py-24">
         <Container>
           <SectionHeader
             eyebrow="Aanmelden"
