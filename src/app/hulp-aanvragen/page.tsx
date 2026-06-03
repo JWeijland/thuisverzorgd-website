@@ -133,19 +133,24 @@ export default function HulpAanvragenPage() {
                 caption: "Welkom",
               },
               {
+                src: "/images/app/app-home.png",
+                alt: "Startscherm met directe hulp en eerdere bezoeken",
+                caption: "Alles overzichtelijk",
+              },
+              {
                 src: "/images/app/app-hulp-soort.png",
                 alt: "Vertel waar u hulp bij nodig heeft — inspreken of kiezen",
                 caption: "Vertel wat u nodig heeft",
               },
               {
+                src: "/images/app/app-hulp-wanneer.png",
+                alt: "Kies wanneer u hulp wilt: zo snel mogelijk of op een gepland moment",
+                caption: "Kies wanneer",
+              },
+              {
                 src: "/images/app/app-hulp-bevestigen.png",
                 alt: "Controleer de aanvraag met soort hulp, tijd en geschat tarief",
                 caption: "Controleer & bevestig",
-              },
-              {
-                src: "/images/app/app-home.png",
-                alt: "Startscherm met directe hulp en eerdere bezoeken",
-                caption: "Alles overzichtelijk",
               },
             ]}
           />
